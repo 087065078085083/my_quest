@@ -22,17 +22,26 @@ class QuestsController < ApplicationController
   # POST /quests or /quests.json
   def create
     @quest = Quest.new(quest_params)
-
+  
     respond_to do |format|
       if @quest.save
-        format.html { redirect_to @quest, notice: "Quest was successfully created." }
-        format.json { render :show, status: :created, location: @quest }
+        format.turbo_stream do
+          # สมมติว่าเราต้องการ clear ฟอร์มหลังบันทึกสำเร็จ
+          render turbo_stream: [
+            turbo_stream.prepend('quests', partial: 'quests/quest', locals: { quest: @quest }),
+            turbo_stream.replace('new_quest', partial: 'quests/form', locals: { quest: Quest.new })
+          ]
+        end
+        format.html { redirect_to quests_path, notice: 'Quest was successfully created.' }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @quest.errors, status: :unprocessable_entity }
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace('new_quest', partial: 'quests/form', locals: { quest: @quest })
+        end
+        format.html { render :new }
       end
     end
   end
+  
 
   # PATCH/PUT /quests/1 or /quests/1.json
   def update
@@ -54,6 +63,16 @@ class QuestsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to quests_path, status: :see_other, notice: "Quest was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def toggle_complete
+    @quest = Quest.find(params[:id])
+    @quest.update(complete: !@quest.complete)
+  
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to quests_path }
     end
   end
 

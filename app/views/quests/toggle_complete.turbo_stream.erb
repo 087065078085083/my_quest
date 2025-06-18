@@ -1,0 +1,10 @@
+<%= turbo_stream.replace "quest_#{@quest.id}" do %>
+  <li id="quest_<%= @quest.id %>">
+    <%= form_with model: @quest, url: toggle_complete_quest_path(@quest), method: :patch, data: { turbo_stream: true } do |f| %>
+      <%= f.check_box :complete, checked: @quest.complete, onchange: "this.form.requestSubmit()" %>
+      <span style="<%= 'text-decoration: line-through;' if @quest.complete %>">
+        <%= @quest.title %>
+      </span>
+    <% end %>
+  </li>
+<% end %>

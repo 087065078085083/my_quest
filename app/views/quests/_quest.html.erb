@@ -1,17 +1,8 @@
-<div id="<%= dom_id quest %>">
-  <p>
-    <strong>Title:</strong>
-    <%= quest.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= quest.description %>
-  </p>
-
-  <p>
-    <strong>Complete:</strong>
-    <%= quest.complete %>
-  </p>
-
-</div>
+<li id="quest_<%= quest.id %>">
+  <%= form_with model: quest, url: toggle_complete_quest_path(quest), method: :patch, data: { turbo_stream: true } do |f| %>
+    <%= f.check_box :complete, checked: quest.complete, onchange: "this.form.requestSubmit()" %>
+    <span style="<%= 'text-decoration: line-through;' if quest.complete %>">
+      <%= quest.title %>
+    </span>
+  <% end %>
+</li>
