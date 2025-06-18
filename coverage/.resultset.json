@@ -1,0 +1,141 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/odds/Desktop/Wanus/Academy_Quest/project7/my_quest/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/Users/odds/Desktop/Wanus/Academy_Quest/project7/my_quest/app/controllers/quests_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/Users/odds/Desktop/Wanus/Academy_Quest/project7/my_quest/app/helpers/application_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/Users/odds/Desktop/Wanus/Academy_Quest/project7/my_quest/app/helpers/quests_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/Users/odds/Desktop/Wanus/Academy_Quest/project7/my_quest/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {}
+      },
+      "/Users/odds/Desktop/Wanus/Academy_Quest/project7/my_quest/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/Users/odds/Desktop/Wanus/Academy_Quest/project7/my_quest/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/Users/odds/Desktop/Wanus/Academy_Quest/project7/my_quest/app/models/quest.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {}
+      }
+    },
+    "timestamp": 1750260287
+  }
+}
